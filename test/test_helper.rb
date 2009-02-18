@@ -1,3 +1,5 @@
+require 'ruby-debug'
+
 module TestHelper
 
   def fixture_path(name)
