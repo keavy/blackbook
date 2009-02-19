@@ -10,7 +10,7 @@ class Blackbook::Importer::Gmail < Blackbook::Importer::PageScraper
   # Matches this importer to an user's name/address
   
   def =~(options = {})
-    options && options[:username] =~ /@gmail.com$/i ? true : false
+    options && options[:username] =~ /@(gmail|googlemail).com$/i ? true : false
   end
   
   ##
