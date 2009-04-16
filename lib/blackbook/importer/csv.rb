@@ -27,6 +27,7 @@ class Blackbook::Importer::Csv < Blackbook::Importer::Base
     lines.each do |l|
       vals = l.split(',')
       next if vals.empty?
+      vals.map! {|x| x.gsub( /\A"/m, "" ).strip.gsub( /"\Z/m, "" ) }
       contacts << to_hash(columns, vals)
     end
 
